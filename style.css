@@ -1,0 +1,21 @@
+.heading{
+    width: 100%;
+    text-align:left;
+}
+
+.heading h3{
+    display: inline;
+}
+
+.heading button{
+    float: right;
+    border: 1px sodil white;
+}
+
+.big_image{
+    width: 100%;
+}
+
+#start, #status{
+    font-size: 22px;
+}
