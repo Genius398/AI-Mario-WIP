@@ -14,17 +14,21 @@ function preload() {
 
 function setup() {
 	canvas = createCanvas(650,400);
+	
 	video = createCapture(VIDEO);
-	video.size(600,300)
+	video.size(800,400);
+	video.parent('game_console');
+
 	poseNet = ml5.poseNet(video,modelLoaded);
 	poseNet.on('pose', gotPoses);
-	canvas.parent('canvas');
 
+
+	canvas.parent('canvas');
 	instializeInSetup(mario);
 }
 
 function draw() {
-	game()
+	game();
 	background("#D3D3D3");
 	if(noseX <300){
 		marioX = marioX - 1;
@@ -47,6 +51,7 @@ function modelLoaded(){
 
 function gotPoses(results){
 	if (results.length > 0){
+		console.log(results);
 		noseX = results[0].pose.nose.x;
 		noseY = results[0].pose.nose.y;
 		console.log("y=" + noseY  +", x=" + noseY);

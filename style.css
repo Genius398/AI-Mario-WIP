@@ -34,3 +34,10 @@ h4{
     display: inline-block;
     width: 45%;
 }
+
+video{
+    background: url('game_console.png');
+    background-size: cover;
+    background-position: center;
+    padding: 45px;
+}
